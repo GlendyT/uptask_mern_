@@ -26,4 +26,4 @@ const EditarProyecto = () => {
   )
 }
 
-export default EditarProyecto
+export default EditarProyecto;
