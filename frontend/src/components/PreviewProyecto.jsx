@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom"
 
+// eslint-disable-next-line react/prop-types
 const PreviewProyecto = ({proyecto}) => {
+    // eslint-disable-next-line react/prop-types
     const {nombre, _id, cliente} = proyecto
+
+
   return (
     <div className="border-b p-5 flex">
         <p className="flex-1">
