@@ -6,7 +6,6 @@ import ModalFormularioTarea from "../components/ModalFormularioTarea";
 import ModalEliminarTarea from "../components/ModalEliminarTarea";
 import ModalEliminarColaborador from "../components/ModalEliminarColaborador";
 import Tarea from "../components/Tarea";
-import Alerta from "../components/Alerta";
 import Colaborador from "../components/Colaborador";
 
 const Proyecto = () => {
@@ -16,7 +15,6 @@ const Proyecto = () => {
     useProyectos();
 
   const admin = useAdmin();
-  console.log(admin);
 
   useEffect(() => {
     obtenerProyecto(params.id);
@@ -27,11 +25,7 @@ const Proyecto = () => {
 
   if (cargando) return "Cargando...";
 
-  const { msg } = alerta;
-
-  return msg && alerta.error ? (
-    <Alerta alerta={alerta} />
-  ) : (
+  return (
     <>
       <div className="flex justify-between">
         <h1 className="font-black text-4xl">{nombre}</h1>
@@ -88,11 +82,7 @@ const Proyecto = () => {
 
       <p className="font-bold text-xl mt-10">Tareas del Proyecto</p>
 
-      <div className="flex justify-center">
-        <div className="md:w-1/3 lg:w-1/4">
-          {msg && <Alerta alerta={alerta} />}
-        </div>
-      </div>
+
 
       <div className="bg-white shadow mt-10 rounded-lg">
         {proyecto.tareas?.length ? (
